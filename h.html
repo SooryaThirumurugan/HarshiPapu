@@ -1,0 +1,813 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Harshita ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #fff0f6;
+    color: #542044;
+    overflow-x: hidden;
+}
+
+button { font-family: inherit; cursor: pointer; }
+
+/* LANDING SCREEN */
+
+#landing {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
+    background:
+        radial-gradient(circle at top left, #ffd1e5, transparent 45%),
+        linear-gradient(135deg, #f9c5d9, #e6c9ff, #fff0f6);
+}
+
+.open-card {
+    width: 100%;
+    max-width: 440px;
+    padding: 42px 25px;
+    border-radius: 30px;
+    background: rgba(255,255,255,.8);
+    border: 1px solid white;
+    box-shadow: 0 15px 50px #b54d8b30;
+    animation: appear 1.2s ease;
+}
+
+.gift {
+    font-size: 85px;
+    animation: bounce 2s infinite;
+}
+
+.open-card h1 {
+    font-size: clamp(2rem, 7vw, 2.7rem);
+    color: #d63384;
+    margin: 18px 0 10px;
+}
+
+.open-card p {
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.open-btn {
+    border: none;
+    padding: 15px 28px;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #ff4f9a, #a855f7);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 7px 20px #d6338450;
+    transition: .3s;
+}
+
+.open-btn:hover { transform: scale(1.06); }
+
+/* BIRTHDAY HERO */
+
+#birthday {
+    display: none;
+    animation: appear 1s ease;
+}
+
+.hero {
+    text-align: center;
+    padding: 75px 20px 55px;
+    background: linear-gradient(135deg, #ffdeeb, #efd8ff, #fff1f7);
+}
+
+.hero .small {
+    font-size: 16px;
+    letter-spacing: 3px;
+    color: #b02b77;
+}
+
+.hero h1 {
+    font-size: clamp(2.6rem, 8vw, 4.8rem);
+    color: #d63384;
+    margin: 20px 0;
+    text-shadow: 2px 3px 0 white;
+}
+
+.hero h2 {
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    color: #803c9d;
+}
+
+.hero p {
+    margin: 20px auto 0;
+    max-width: 650px;
+    line-height: 1.9;
+    font-size: 17px;
+}
+
+.heart {
+    display: inline-block;
+    color: #ff3985;
+    animation: heartbeat 1.3s infinite;
+}
+
+/* GENERAL SECTIONS */
+
+.section {
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    color: #c02679;
+    font-size: clamp(1.7rem, 5vw, 2.2rem);
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    color: #87516f;
+    margin: 0 auto 30px;
+    line-height: 1.8;
+    max-width: 700px;
+}
+
+/* PHOTO GALLERY */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.photo-card {
+    background: white;
+    padding: 12px 12px 20px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px #b84b851a;
+    transform: rotate(-1deg);
+    transition: .35s;
+}
+
+.photo-card:nth-child(even) { transform: rotate(1deg); }
+
+.photo-card:hover {
+    transform: translateY(-8px) rotate(0);
+}
+
+/* YOUR Harshi.png IMAGE */
+
+.memory-photo {
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+
+    background-image: url("Harshi.png");
+    background-repeat: no-repeat;
+    background-size: 300% 100%;
+    background-position-y: center;
+}
+
+.memory-one { background-position-x: left; }
+.memory-two { background-position-x: center; }
+.memory-three { background-position-x: right; }
+
+.photo-card p {
+    padding-top: 15px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* OUR STORY */
+
+.story-section {
+    background: linear-gradient(145deg, #fff4f8, #f3e6ff);
+}
+
+.story-card {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 35px 28px;
+    background: rgba(255,255,255,.9);
+    border: 1px solid #ffd5e8;
+    border-radius: 25px;
+    box-shadow: 0 12px 35px #b54d8b15;
+}
+
+.story-emoji {
+    font-size: 34px;
+    margin: 28px 0 12px;
+}
+
+.story-card h3 {
+    color: #c02679;
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.story-card p {
+    font-size: 16px;
+    line-height: 1.95;
+    color: #70445f;
+}
+
+.story-ending {
+    margin-top: 32px;
+    padding: 22px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #ffe0ed, #f0ddff);
+    color: #a32670;
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.9;
+    font-weight: 600;
+}
+
+/* QUOTES */
+
+.quotes {
+    background: linear-gradient(135deg, #ffe3ef, #f1e3ff);
+}
+
+.quote-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+    max-width: 950px;
+    margin: auto;
+}
+
+.quote {
+    background: rgba(255,255,255,.9);
+    padding: 25px;
+    border-radius: 20px;
+    line-height: 1.9;
+    box-shadow: 0 6px 20px #9b4b8310;
+    transition: .3s;
+}
+
+.quote:hover { transform: translateY(-5px); }
+
+.quote span {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+/* LETTER */
+
+.letter {
+    max-width: 750px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 10px 35px #a23c7c18;
+    line-height: 2;
+    font-size: 16px;
+    text-align: left;
+}
+
+.letter h3 {
+    color: #d63384;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+.letter p { margin-bottom: 18px; }
+
+.letter .signoff {
+    text-align: center;
+    color: #d63384;
+    font-weight: bold;
+}
+
+/* FINAL MESSAGE */
+
+.final-quote {
+    background: linear-gradient(135deg, #ffdeeb, #ecd8ff);
+    padding: 55px 22px;
+    text-align: center;
+}
+
+.final-quote .big-heart {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.final-quote h2 {
+    font-size: clamp(1.6rem, 5vw, 2.5rem);
+    color: #c02679;
+    margin-bottom: 20px;
+}
+
+.final-quote p {
+    max-width: 650px;
+    margin: auto;
+    font-size: 19px;
+    font-style: italic;
+    line-height: 1.9;
+}
+
+/* FOOTER */
+
+.footer {
+    text-align: center;
+    padding: 38px 15px;
+    background: #542044;
+    color: white;
+    line-height: 2;
+}
+
+.footer strong { color: #ffb4d3; }
+
+/* FLOATING HEARTS */
+
+#celebration {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.floating {
+    position: absolute;
+    bottom: -50px;
+    animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.25); }
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* MOBILE */
+
+@media(max-width: 480px) {
+    .hero { padding-top: 55px; }
+    .section { padding: 42px 16px; }
+    .story-card { padding: 25px 19px; }
+    .story-card h3 { font-size: 19px; }
+    .story-card p { font-size: 15px; }
+    .letter { padding: 22px; font-size: 15px; }
+    .memory-photo { height: 300px; }
+}
+</style>
+</head>
+
+<body>
+
+<div id="celebration"></div>
+
+<!-- LANDING PAGE -->
+
+<section id="landing">
+    <div class="open-card">
+        <div class="gift">🎁</div>
+
+        <h1>Hey Harshita! 💖</h1>
+
+        <p>
+            Someone very special deserves a beautiful surprise today.
+            <br><br>
+            A little story, beautiful memories,
+            and a whole lot of love, made just for you. 🥹
+        </p>
+
+        <button class="open-btn" onclick="openSurprise()">
+            💌 Click to Open Your Surprise
+        </button>
+
+        <p style="margin:22px 0 0;font-size:13px;">
+            Made with love, just for you ❤️
+        </p>
+    </div>
+</section>
+
+<main id="birthday">
+
+<!-- BIRTHDAY HEADER -->
+
+<header class="hero">
+    <div class="small">✨ TODAY IS ALL ABOUT YOU ✨</div>
+
+    <h1>Happy Birthday<br>Harshita! 🎂</h1>
+
+    <h2>My Sister by Heart <span class="heart">♥</span></h2>
+
+    <p>
+        We may have met as strangers online,
+        but today you're someone who holds a special
+        place in my heart. I'm so glad that one little
+        "Hi" brought you into my life. ❤️
+    </p>
+
+    <div style="font-size:42px;margin-top:25px;">
+        🎈 🎁 💐
+    </div>
+</header>
+
+<!-- OUR STORY -->
+
+<section class="section story-section">
+    <h2>It All Started With a "Hi" 🥹❤️</h2>
+
+    <p class="subtitle">
+        Sometimes the smallest beginnings create the most beautiful bonds.
+    </p>
+
+    <div class="story-card">
+
+        <div class="story-emoji">💬</div>
+        <h3>Just One Little "Hi"</h3>
+        <p>
+            Who knew that a simple "Hi" between two people
+            who met online would slowly turn into such a
+            beautiful bond? Back then, we were just two
+            strangers starting a conversation. Neither
+            of us knew how special this connection could become.
+        </p>
+
+        <div class="story-emoji">🫂</div>
+        <h3>From Strangers to Something Special</h3>
+        <p>
+            Slowly, the conversations became familiar,
+            the little moments became memories, and
+            somehow you found a place in my heart.
+            You became someone I genuinely care about,
+            someone whose happiness matters to me,
+            and someone I'm thankful to have met.
+        </p>
+
+        <div class="story-emoji">❤️</div>
+        <h3>Not By Blood, But By Heart</h3>
+        <p>
+            We may not share the same blood, the same home,
+            or the same childhood memories. But that doesn't
+            make this bond any less meaningful to me.
+            Family isn't always just about where we come from.
+            Sometimes, it's also about the people we meet
+            and the place they slowly earn in our hearts.
+        </p>
+
+        <div class="story-emoji">🌍</div>
+        <h3>A Screen Brought Us Together</h3>
+        <p>
+            It's amazing how someone who once existed only
+            as a name and a message on a screen can become
+            such a familiar part of your life. We may have
+            started as online friends, but I'm genuinely
+            grateful for the bond we've built.
+        </p>
+
+        <div class="story-emoji">🧿</div>
+        <h3>My Birthday Wish for You</h3>
+        <p>
+            I hope life gives you countless reasons to smile.
+            I hope your dreams come true, your difficult
+            days become easier, and your heart always finds
+            peace. You deserve genuine happiness, people
+            who appreciate you, and a future that makes
+            you proud of yourself.
+        </p>
+
+        <div class="story-ending">
+            "Some people enter our lives as strangers,
+            but slowly become a beautiful part of our hearts.
+            Our story began with a 'Hi', and I'm glad it did." ❤️
+        </div>
+
+    </div>
+</section>
+
+<!-- THREE PHOTOS FROM Harshi.png -->
+
+<section class="section">
+    <h2>Our Beautiful Bond ❤️🫂</h2>
+
+    <p class="subtitle">
+        Not born as siblings, but connected by heart.
+        A little collection imagining our childhood together. 💗
+    </p>
+
+    <div class="gallery">
+
+        <div class="photo-card">
+            <div class="memory-photo memory-one"
+                 role="img"
+                 aria-label="Illustration of an elder brother reading with his younger sister">
+            </div>
+            <p>My Forever Favourite Person ❤️</p>
+        </div>
+
+        <div class="photo-card">
+            <div class="memory-photo memory-two"
+                 role="img"
+                 aria-label="Illustration of an elder brother hugging his younger sister">
+            </div>
+            <p>I'll Always Be There for You 🫂</p>
+        </div>
+
+        <div class="photo-card">
+            <div class="memory-photo memory-three"
+                 role="img"
+                 aria-label="Illustration of an elder brother celebrating his younger sister's birthday">
+            </div>
+            <p>Your Happiness Is My Happiness 🎂</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- SISTER QUOTES -->
+
+<section class="section quotes">
+    <h2>For My Sister by Heart 💕</h2>
+
+    <p class="subtitle">
+        Little reminders of how special you are to me.
+    </p>
+
+    <div class="quote-grid">
+
+        <div class="quote">
+            <span>👭</span>
+            "A sister by heart is a beautiful reminder
+            that family can sometimes begin with friendship."
+        </div>
+
+        <div class="quote">
+            <span>❤️</span>
+            "We may not share the same blood,
+            but we can still share a bond that means the world."
+        </div>
+
+        <div class="quote">
+            <span>💬</span>
+            "One little 'Hi' started a conversation.
+            I never knew it would lead to someone so special."
+        </div>
+
+        <div class="quote">
+            <span>🫂</span>
+            "Distance may keep people apart physically,
+            but it doesn't decide how much they can mean to each other."
+        </div>
+
+        <div class="quote">
+            <span>🌸</span>
+            "May your smile never fade, your dreams come true,
+            and your heart always find reasons to be happy."
+        </div>
+
+        <div class="quote">
+            <span>💖</span>
+            "Some friendships become more than friendships.
+            They become a little family of their own."
+        </div>
+
+        <div class="quote">
+            <span>✨</span>
+            "You weren't part of my childhood,
+            but I'm glad you became part of my story."
+        </div>
+
+        <div class="quote">
+            <span>🧿</span>
+            "No birthday gift could express how grateful
+            I am that our paths crossed."
+        </div>
+
+    </div>
+</section>
+
+<!-- PERSONAL LETTER -->
+
+<section class="section">
+    <h2>A Little Letter From My Heart 💌</h2>
+
+    <p class="subtitle">
+        Harshita, these words are just for you.
+    </p>
+
+    <div class="letter">
+
+        <h3>Dear Harshita, My Sister by Heart ❤️🫂</h3>
+
+        <p>
+            Happy Birthday to someone who came into my life
+            as a stranger but slowly became one of the most
+            special people in my heart. 🥹❤️
+        </p>
+
+        <p>
+            Do you remember how it all started?
+            Just a simple <strong>"Hi."</strong>
+            Two strangers talking online, without knowing
+            that one small conversation could turn into
+            a bond this beautiful.
+        </p>
+
+        <p>
+            Neither of us knew what we would become to each
+            other. We didn't grow up together, we don't share
+            the same childhood, and we aren't connected by
+            blood. But somewhere along the way, you became
+            someone I genuinely care about, someone whose
+            happiness matters to me, and someone I'm grateful
+            to have met.
+        </p>
+
+        <p>
+            <strong>
+                Maybe we weren't born into the same family,
+                but I'm happy that life gave us a chance
+                to become family in our own way. 🫂💗
+            </strong>
+        </p>
+
+        <p>
+            Sometimes, it's strange how a person who was
+            once just a name on a screen can slowly become
+            a familiar part of your day. A notification can
+            bring a smile, a conversation can make a difficult
+            day feel lighter, and a simple presence can mean
+            more than words can explain.
+        </p>
+
+        <p>
+            Harshita, I don't know what the future has planned
+            for us. Life may get busy, our routines may change,
+            and many things may be different with time.
+            But today, I just want you to know that I'm
+            genuinely happy our paths crossed.
+        </p>
+
+        <p>
+            On your birthday, I wish you more happiness than
+            your heart can hold, more success than you ever
+            imagined, and the strength to get through every
+            difficult day. I hope you never forget how valuable
+            you are and how much you deserve to be loved,
+            respected, and appreciated.
+        </p>
+
+        <p>
+            Keep smiling, keep chasing your dreams, and never
+            lose the beautiful person you are. I hope this new
+            year of your life brings you beautiful surprises,
+            peaceful days, unforgettable memories, and countless
+            reasons to feel proud of yourself.
+        </p>
+
+        <p>
+            Thank you for that first "Hi."
+            Thank you for becoming my friend.
+            And thank you for being my sister by heart. ❤️
+        </p>
+
+        <p>
+            You may have entered my life through a screen,
+            but the care and respect I have for you are real.
+            I'm glad that out of all the people we could have
+            met, our paths crossed.
+        </p>
+
+        <p class="signoff">
+            Happy Birthday, Harshita! 🎂💖
+            <br><br>
+            Forever your brother by heart. 🫂❤️
+        </p>
+
+    </div>
+</section>
+
+<!-- FINAL EMOTIONAL MESSAGE -->
+
+<section class="final-quote">
+    <div class="big-heart">❤️</div>
+
+    <h2>Not Born as Siblings, Connected by Heart.</h2>
+
+    <p>
+        "Our story began with a 'Hi', but somewhere between
+        those conversations, you became family to me.
+        I may not have been part of your childhood,
+        but I'm happy to be a part of your story today."
+    </p>
+
+    <div style="margin-top:25px;font-size:28px;">
+        🫂 💗 🧿
+    </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+    <div style="font-size:38px;">🎂 💗 🎉</div>
+
+    <h2>Happy Birthday, Harshita!</h2>
+
+    <p>
+        May this year bring you everything
+        your beautiful heart wishes for.
+    </p>
+
+    <p><strong>Forever your brother by heart ❤️</strong></p>
+
+    <p style="font-size:13px;margin-top:15px;">
+        Made with love, just for you. 🫂
+    </p>
+
+    <button class="open-btn"
+            style="margin-top:20px;"
+            onclick="celebrate()">
+        🎉 Celebrate Again!
+    </button>
+</footer>
+
+</main>
+
+<script>
+function openSurprise() {
+    document.getElementById("landing").style.display = "none";
+    document.getElementById("birthday").style.display = "block";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+    celebrate();
+}
+
+function celebrate() {
+    const area = document.getElementById("celebration");
+
+    const symbols = [
+        "❤️", "💖", "💕", "✨",
+        "🌸", "🎉", "💗", "🫂"
+    ];
+
+    for (let i = 0; i < 65; i++) {
+        const item = document.createElement("span");
+
+        item.className = "floating";
+
+        item.textContent =
+            symbols[Math.floor(Math.random() * symbols.length)];
+
+        item.style.left = Math.random() * 100 + "%";
+
+        item.style.fontSize =
+            (15 + Math.random() * 23) + "px";
+
+        item.style.animationDuration =
+            (3 + Math.random() * 4) + "s";
+
+        item.style.animationDelay =
+            Math.random() * 1.5 + "s";
+
+        area.appendChild(item);
+
+        setTimeout(function() {
+            item.remove();
+        }, 9000);
+    }
+}
+</script>
+
+</body>
+</html>
